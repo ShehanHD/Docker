@@ -8,21 +8,7 @@
 </head>
 
 <body>
-    <?php
-    echo "test";
-    ?>
     aaaa
 </body>
 
 </html>
-
-<?php
-$servername = "mysql";
-$username = "root";
-$password = "1993";
-
-$conn = new mysqli($servername, $username, $password);
-
-echo $conn;
-echo "ciaooo";
-?>
