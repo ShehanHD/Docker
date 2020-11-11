@@ -5,16 +5,19 @@ const app = express();
 
 app.use(morgan('dev'));
 
-mongoose
-    .connect(
-        'mongodb://mongo:27017/test',
-        { useNewUrlParser: true }
-    )
-    .then(() => console.log('MongoDB Connected'))
-    .catch(err => console.log(err));
+mongoose.connect(
+    'mongodb://localhost:27017/test',
+    { useNewUrlParser: true }
+)
+
+const connection = mongoose.connection;
+
+connection.once("open", function () {
+    console.log("MongoDB database connection established successfully");
+});
 
 app.get('/', (req, res) => {
-    res.status(200).json({ "test": "c" })
+    res.status(200).json({ "test": "d" })
 })
 
 
