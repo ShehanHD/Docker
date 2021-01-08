@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+    mariadb:
+        image: mariadb
+        container_name: mariadb
+        environment: 
+            - PUID=1000
+            - PGID=1000
+            - MYSQL_ROOT_PASSWORD=m4r14D8@2020
+        ports:
+            - 3306:3306
+        volumes: 
+            - ./data:/var/lib/mysql
+        restart: unless-stopped
