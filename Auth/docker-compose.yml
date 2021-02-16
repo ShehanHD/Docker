@@ -1,0 +1,8 @@
+version: "2.1"
+services:
+  tfa:
+    container_name: tfa
+    build: .
+    ports:
+      - 50000:5000
+    restart: always
